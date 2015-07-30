@@ -70,6 +70,7 @@ h2 {
 
 .jumbotron {
   background-color: #f5f5f5;
+  height: 200px;
 }
 .well {
   background-color: white;
@@ -78,3 +79,19 @@ h2 {
 .quiet {
   // float: right;
 }
+
+.gravatar {
+
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+

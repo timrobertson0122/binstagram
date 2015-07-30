@@ -13,17 +13,17 @@
     <h1> Latest Photos </h1>
     <hr/>
     <% @photos.each do |photo| %>
-      <div class="col-lg-12 well">
+      <div class="well col-md-8 col-md-offset-2">
           <h1><%= link_to photo.name, photo_path(photo) %></h1> 
           <h4><%= "Posted by #{photo.user.email}" %></h4>
           <%= gravatar_for photo.user, size: 50 %>
           <span class="quiet"><small> <%= time_ago_in_words(photo.created_at) %> ago</small></span>
           <h3 class='image'><%= image_tag photo.image.url(:original), {:width => "500", :height => "500"} %></h3> 
           <p><%= photo.description %></p> 
-          <%= link_to "Like #{photo.name}", photo_likes_path(photo), class: 'likes-link' %>
+          <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
         <span class="likes_count"> <%= photo.likes.count %> </span> 
         <%= 'like'.pluralize(photo.likes.count) %><br>
-        <%= link_to "Comment on #{photo.name}", new_photo_comment_path(photo) %></br>
+        <%= link_to "Comment", new_photo_comment_path(photo) %></br>
         <!-- <h5>Comments for <%= photo.name %></h5> -->
         <% if photo.comments.any? %>
           <ul>
@@ -35,8 +35,6 @@
           </ul>
           </li>
         </ul>
-            <% else %>
-          <p>No comments.</p>
         <% end %>
       </div>
       <hr/>
