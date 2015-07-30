@@ -12,4 +12,4 @@
 !/log/.keep
 /tmp
 /spec/test_files
-/config/secrets.yml
+
