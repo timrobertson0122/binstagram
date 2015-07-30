@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'create_awesome_readme'
 gem 'paperclip'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -24,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'rack-cors', :require => 'rack/cors'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'aws-sdk', '<2.0'
@@ -57,4 +57,6 @@ group :test do
   gem 'poltergeist'
   gem 'database_cleaner'
 
+  gem 'rails_12factor', group: :production
+  ruby "2.2.2"
 end
