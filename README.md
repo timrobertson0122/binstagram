@@ -1,41 +1,67 @@
-Title
-=======================
+Instagram Challenge
+===================
 
-## Synopsis
+Task
+-----
 
-TODO: Enter a description of your project here.
+Build Instagram using Rails.
 
-![NAME_OF_IMAGE](http://ENTER_URL)
+Core Functionality
+------------------
 
-## Technologies Used
+Users 
+----
+     - can sign up, sign in manually or via Facebook authentication - ✓  
+     - can post photos with title and description - ✓  
+     - can comment on photos - ✓   
+     - can 'like' photos - ✓    
 
-- LANGUAGE_ONE
-- LANGUAGE_TWO
-- FRAMEWORK
-- TESTING SUITES
+Photos, Comments, Likes
+-----
+     - display on the homepage - ✓  
+     - are stored - ✓  
+     - Can be commented on and liked - ✓  
 
-## Job List
+Bonus Functionality
+-------------------
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+Users
+-----
+     - have many photos, comments, likes - ✓  
+     - can sign up/in via Twitter  
+     - can tag photos and add Twitter handles  
+     - can share images via social media - ✓  
+     - can edit/delete their submissions  
+     - can like/unlike a photo  
+     - can search for a photo by name/tag
 
-## Favourite Code Snippet
+Photos, Comments, Likes
+------
+     - Belong to a User - ✓  
+     - Photos display in reverse chronological order - ✓  
+     - show the relevant user name
+     - show when they were added to the site, in plain english (e.g 'One hour ago')  
+     - Carry a 'Like' counter reflecting number of likes - ✓  
+     - Carry comments, with relevant user - ✓  
+       
+Technologies
+------------
 
-~~~
- TODO: paste code here
-~~~
-
-## Collaborators
-
-- NAME_ONE (http://www.github.com/USERNAME)
-- NAME_TWO (http://www.github.com/USERNAME)
+Built on - Rails  
+Tested with - Rspec, Capybara and Shoulda  
+ORM - ActiveRecord  
+Image management - Paperclip, Imagemagick, AWS S3  
+Authentication - Devise, OmniAuth  
 
 ## Still to complete/refactor
 
-- [ ]
-- [ ]
+- Testing for image on page
+- Like counter on photo show view
+- Posted by user name not user_id
+- Fixing sharing counters
+- time_ago_in_words gem
+- search/filters
+- like/unlike
 
 ## Takeaway
 
