@@ -1,4 +1,4 @@
-Instagram Challenge
+Binstagram - this is rubbish!
 ===================
 
 Task
