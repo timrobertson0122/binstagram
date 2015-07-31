@@ -8,4 +8,13 @@ class Photo < ActiveRecord::Base
   validates :description, length: { minimum: 10 }, presence: :true
   validates :image, presence: true
   validates :user_id, presence: true
+
+  def thumbs_up_total
+    self.likes.where(like: true).size
+  end
+
+  def thumbs_down_total
+    self.likes.where(like: false).size
+  end
+
 end

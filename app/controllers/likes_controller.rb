@@ -4,6 +4,8 @@ class LikesController < ApplicationController
     @photo = Photo.find(params[:photo_id])
     @like = @photo.likes.build(user: current_user)
     @like.save
-    render json: {new_like_count: @photo.likes.count}
+    # render json: {new_like_count: @photo.likes.count}
+    flash[:success] = "Your selection was successful"
+    redirect_to :back 
   end
 end

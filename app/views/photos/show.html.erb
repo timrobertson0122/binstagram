@@ -9,9 +9,14 @@
     </p>
     <h3 class='image'><%= image_tag @photo.image.url(:original), {:width => "500", :height => "500"}%></h3>
     <p><%=@photo.description %></p>
-    <%= link_to "Like", photo_likes_path(@photo), class: 'likes-link' %>
-  <span class="likes_count"> <%= @photo.likes.count %> </span> 
-    <%= 'like'.pluralize(@photo.likes.count) %><br>
+      <%= link_to photo_likes_path(@photo, like: true), method: :post do %>
+        <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @photo.thumbs_up_total %>
+      <% end %> &nbsp&nbsp&nbsp&nbsp
+      <%= link_to photo_likes_path(@photo, like: false), method: :post do %>
+        <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @photo.thumbs_down_total %>
+      <% end %>
+      
+    <span class="likes_count"> <%= @photo.likes.count %> </span> <%= 'like'.pluralize(@photo.likes.count) %><br>
     <%= link_to "Comment", new_photo_comment_path(@photo) %></br>
     <% if @photo.comments.any? %>
       <h5>Comments for <%= @photo.name %></h5>

@@ -14,13 +14,18 @@
     <hr/>
     <% @photos.each do |photo| %>
       <div class="well col-md-8 col-md-offset-2">
-          <h1><%= link_to photo.name, photo_path(photo) %></h1> 
-          <h4><%= "Posted by #{photo.user.email}" %></h4>
-          <%= gravatar_for photo.user, size: 50 %>
-          <span class="quiet"><small> <%= time_ago_in_words(photo.created_at) %> ago</small></span>
-          <h3 class='image'><%= image_tag photo.image.url(:original), {:width => "500", :height => "500"} %></h3> 
-          <p><%= photo.description %></p> 
-          <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
+        <h1><%= link_to photo.name, photo_path(photo) %></h1> 
+        <h4><%= "Posted by #{photo.user.email}" %></h4>
+        <%= gravatar_for photo.user, size: 50 %>
+        <span class="quiet"><small> <%= time_ago_in_words(photo.created_at) %> ago</small></span>
+        <h3 class='image'><%= image_tag photo.image.url(:original), {:width => "500", :height => "500"} %></h3> 
+        <p><%= photo.description %></p> 
+        <%= link_to photo_likes_path(photo, like: true), method: :post do %>
+        <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= photo.thumbs_up_total %>
+        <% end %> &nbsp&nbsp&nbsp&nbsp
+        <%= link_to photo_likes_path(photo, like: false), method: :post do %>
+        <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= photo.thumbs_down_total %>
+        <% end %>
         <span class="likes_count"> <%= photo.likes.count %> </span> 
         <%= 'like'.pluralize(photo.likes.count) %><br>
         <%= link_to "Comment", new_photo_comment_path(photo) %></br>
