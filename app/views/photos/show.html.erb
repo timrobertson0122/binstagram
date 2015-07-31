@@ -1,8 +1,7 @@
+<%= render 'shared/page_title', title: @photo.name %>
+
 <div class="col-md-12">
   <div class="center">
-    <p>
-    <h1><%=@photo.name%></h1>
-    </p>
     <%= gravatar_for @photo.user size: 200 %>
     <p>
     <h4><%= "Posted by #{@photo.user.email}" %></h4>
@@ -15,7 +14,7 @@
       <%= link_to photo_likes_path(@photo, like: false), method: :post do %>
         <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @photo.thumbs_down_total %>
       <% end %>
-      
+
     <span class="likes_count"> <%= @photo.likes.count %> </span> <%= 'like'.pluralize(@photo.likes.count) %><br>
     <%= link_to "Comment", new_photo_comment_path(@photo) %></br>
     <% if @photo.comments.any? %>
@@ -30,6 +29,5 @@
     <% else %>
       <p>Be the first to comment on this photo</p>
     <% end %>
-    <h3><%= link_to 'All Photos', photos_path, class: "btn btn-warning btn-small" %></h3>
   </div>
 </div>

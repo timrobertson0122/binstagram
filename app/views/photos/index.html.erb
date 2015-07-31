@@ -1,17 +1,8 @@
-<div class="center jumbotron">
-  <h1>Welcome to Binstagram</h1>
-
-  <h2>
-    This is a rubbish Instagram clone, just for fun!
-  </h2>
-<!--     <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-lg btn-success" %>
- --></div>
+<%= render 'shared/page_title', title: "Latest Photos" %>
 
 <div class="center">
   <% if @photos.any? %>
     <div class="column">
-    <h1> Latest Photos </h1>
-    <hr/>
     <% @photos.each do |photo| %>
       <div class="well col-md-8 col-md-offset-2">
         <h1><%= link_to photo.name, photo_path(photo) %></h1> 
