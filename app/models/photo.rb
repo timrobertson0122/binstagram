@@ -8,6 +8,7 @@ class Photo < ActiveRecord::Base
   validates :description, length: { minimum: 10 }, presence: :true
   validates :image, presence: true
   validates :user_id, presence: true
+  default_scope -> { order(updated_at: :desc) }
 
   def thumbs_up_total
     self.likes.where(like: true).size

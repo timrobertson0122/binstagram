@@ -51,6 +51,8 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -240,6 +242,7 @@ GEM
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -250,6 +253,7 @@ DEPENDENCIES
   actionview
   aws-sdk (< 2.0)
   bootstrap-sass (~> 3.3.5)
+  bootstrap-will_paginate (= 0.0.10)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -274,6 +278,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  will_paginate (= 3.0.7)
 
 BUNDLED WITH
    1.10.6

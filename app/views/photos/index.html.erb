@@ -1,5 +1,7 @@
 <%= render 'shared/page_title', title: "Latest Photos" %>
 
+<%= will_paginate %>
+
 <div class="center">
   <% if @photos.any? %>
     <div class="column">
@@ -38,3 +40,5 @@
     <h1>No photos yet!</h1>
   <% end %>
 </div>
+
+<%= will_paginate %>
