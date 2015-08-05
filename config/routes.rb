@@ -5,8 +5,10 @@ get 'photos' => 'photos#index'
 root to: 'photos#index'
 
 resources :photos do
+  member do
+    post 'like'
+  end
   resources :comments
-  resources :likes
 end
 
 devise_scope :user do

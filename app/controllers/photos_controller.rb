@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
-    @photos = Photo.all
+    @photos = Photo.all.sort_by{|photo| photo.created_at}.reverse
   end
 
   def show
@@ -23,6 +23,18 @@ class PhotosController < ApplicationController
       else
         render :new
       end
+  end
+
+  def like
+    @photo = Photo.find(params[:id])
+    like = Like.create(like: params[:like], user: User.first, photo: @photo) #change user to current_user
+    if like.valid?
+      flash[:success] = "Your selection was successful!"
+      redirect_to :back
+    else 
+      flash[:danger] = "You can only like/dislike a photo once."
+      redirect_to :back
+    end
   end
 
   private
