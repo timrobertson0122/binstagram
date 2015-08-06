@@ -1,7 +1,7 @@
-require 'time_ago_in_words'
-
 class CommentsController < ApplicationController
 
+  before_action :authenticate_user!, :except => [:index, :show]
+  
   def comment_params
     params.require(:comment).permit(:thoughts)
   end

@@ -2,7 +2,7 @@
 
 <div class="col-md-12">
   <div class="center">
-    <%= gravatar_for @photo.user size: 200 %>
+    <%= link_to gravatar_for(@photo.user, size: 100), user_path(@photo.user) %>
     <p>
     <h4><%= "Posted by #{@photo.user.email}" %></h4>
     </p>

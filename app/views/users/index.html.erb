@@ -1,0 +1,21 @@
+<%= render 'shared/page_title', title: "Binstagramers" %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 center">
+    <%= will_paginate %>
+  </div>
+</div>
+
+<% @users.each do |user| %>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 center">
+      <%= link_to gravatar_for(user, size: 200), user_path(user) %>
+      <p>
+        <h5>User: <%= user.email %> </h5>
+      </p>
+    </div>
+  </div>
+<% end %>
+<div class="center">
+  <%= will_paginate %>
+</div>

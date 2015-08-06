@@ -1,10 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "Binstagram", photos_path, class: "btn btn-lg btn-success", id: "logo" %>
-    <!-- <h1>Welcome to Binstagram</h1>
-    <h2>This is a rubbish Instagram clone, just for fun!</h2> -->
-    <div class="nav-item">
-      <% if user_signed_in? %>
+    <%= link_to "Users", users_path, class: "btn btn-lg btn-default", id: "users" %>
+    <% if user_signed_in? %>
+      <div class="nav-item">
+        <%= link_to 'Profile', user_path(current_user), class: "btn btn-lg btn-default", id: "user-profile" %>
         <%= link_to 'Add a photo', new_photo_path, class: "btn btn-lg btn-success", id: "add-photo" %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-default btn-warning", id: "signout" %>
     </div>

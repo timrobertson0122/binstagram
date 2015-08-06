@@ -1,8 +1,16 @@
-<%= render 'shared/page_title', title: "Latest Photos" %>
+<%= render 'shared/page_title', title: "Binstagramer: " + @user.email %>
 
 <div class="row">
   <div class="col-md-4 col-md-offset-4 center">
-    <%= will_paginate %>
+    <%= link_to gravatar_for(@user, size: 100), user_path(@user) %>
+    <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 center">
+    <h3><em>Photos:</em></h3>
+    <%= will_paginate @photos %>
   </div>
 </div>
 
@@ -12,8 +20,6 @@
     <% @photos.each do |photo| %>
       <div class="well col-md-8 col-md-offset-2">
         <h1><%= link_to photo.name, photo_path(photo) %></h1> 
-        <h4><%= "Posted by #{photo.user.email}" %></h4>
-        <%= link_to gravatar_for(photo.user, size: 50), user_path(photo.user) %>
         <span class="quiet"><small> <%= time_ago_in_words(photo.created_at) %> ago</small></span>
         <h3 class='image'><%= image_tag photo.image.url(:original), {:width => "500", :height => "500"} %></h3> 
         <p><%= photo.description %></p> 
@@ -44,5 +50,3 @@
     <h1>No photos yet!</h1>
   <% end %>
 </div>
-
-<%= will_paginate %>

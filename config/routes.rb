@@ -12,6 +12,7 @@ resources :photos do
 end
 
 devise_scope :user do
+  resources :users
 end
 
 end
