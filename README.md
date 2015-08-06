@@ -33,8 +33,8 @@ You will need the following things properly installed on your computer.
 ### Project setup on local environment
 
 ```
-git clone git@github.com:timrobertson0122/craftathon.git
-cd craftathon
+git clone git@github.com:timrobertson0122/binstagram.git
+cd binstagram
 bundle
 bin/rake db:create
 rails s
