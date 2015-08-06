@@ -15,7 +15,7 @@ module SessionHelpers
     attach_file 'Image', Rails.root.join('spec/features/dumpster.png')
     fill_in 'Name', with: name
     fill_in 'Description', with: description
-    click_button 'Create Photo'
+    click_button 'Submit Photo'
   end
 
 end

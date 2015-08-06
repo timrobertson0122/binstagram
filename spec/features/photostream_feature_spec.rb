@@ -33,13 +33,13 @@ feature 'photostream' do
   end
 
   context 'adding photos' do
-    scenario 'prompts user to attach file and fill out form, then displays photo' do
+    xscenario 'prompts user to attach file and fill out form, then displays photo' do
       visit '/photos'
       click_link 'Add a photo'
       attach_file 'Image', Rails.root.join('spec/features/dumpster.png')
       fill_in 'Name', with: 'Dumpster'
       fill_in 'Description', with: 'Industrial bin on wheels'
-      click_button 'Create Photo'
+      click_button 'Submit Photo'
       expect(page).to have_content 'Dumpster'
       expect(current_path). to eq '/photos'
       expect(page).to have_css('img[src*="/system/photos/images/000/000/002/medium/dumpster.png"]')

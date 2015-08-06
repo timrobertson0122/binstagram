@@ -17,7 +17,7 @@ feature 'commenting' do
   scenario 'allows users to leave a comment using a form' do
     
     visit '/photos'
-    click_link 'Comment on Dumpster'
+    click_link 'Comment'
     fill_in 'Thoughts', with: 'so so'
     click_button 'Leave Comment'
     expect(current_path).to eq '/photos'

@@ -30,11 +30,10 @@ class PhotosController < ApplicationController
     like = Like.create(like: params[:like], user: User.first, photo: @photo) #change user to current_user
     if like.valid?
       flash[:success] = "Your selection was successful!"
-      redirect_to :back
     else 
       flash[:danger] = "You can only like/dislike a photo once."
-      redirect_to :back
     end
+      redirect_to :back
   end
 
   private
