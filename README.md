@@ -47,7 +47,7 @@ bin/rake db:create RAILS_ENV=test
 rspec
 ```
 
-## Future Functionality
+### Future Functionality
 
 Edit users/photos  
 Add name field to users    
