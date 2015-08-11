@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/timrobertson0122/binstagram.svg?branch=master)](https://travis-ci.org/timrobertson0122/binstagram)
 [![Coverage Status](https://coveralls.io/repos/timrobertson0122/binstagram/badge.svg?branch=master&service=github)](https://coveralls.io/github/timrobertson0122/binstagram?branch=master)
+[![Code Climate](https://codeclimate.com/github/timrobertson0122/binstagram/badges/gpa.svg)](https://codeclimate.com/github/timrobertson0122/binstagram)
 
 Binstagram - this is rubbish!
 ===================
