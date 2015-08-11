@@ -46,3 +46,11 @@ rails s
 bin/rake db:create RAILS_ENV=test
 rspec
 ```
+
+## Future Functionality
+
+Edit users/photos  
+Add name field to users    
+Inline comments  
+Twitter integration including handles/hashtags  
+Better styling  
