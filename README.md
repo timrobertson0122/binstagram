@@ -6,7 +6,9 @@ Binstagram - this is rubbish!
 ===================
 
 Try it out on Heroku  
-http://binstagram.herokuapp.com/
+http://binstagram.herokuapp.com/  
+
+![Screenshot Homepage](/img/Screen.png)
 
 Task
 -----
