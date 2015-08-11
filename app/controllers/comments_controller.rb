@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     @photo = Photo.find(params[:photo_id])
     @comment = @photo.comments.build(comment_params.merge(user: current_user))
     @comment.save
-    redirect_to photos_path
+    redirect_to photo_path(@photo)
   end
 
   def posted_at

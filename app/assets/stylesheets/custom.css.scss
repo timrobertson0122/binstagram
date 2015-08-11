@@ -22,7 +22,6 @@
 #users {
   margin-top: 15px;
   margin-bottom: 10px;
-  float: left;
 }
 
 body {
@@ -33,18 +32,21 @@ body {
 .nav-item {
   margin-left: 25px;
   float: right;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-right: 5px;
 }
 
-#signout {
-  margin-top: 12px;
-}
+// #signout {
+//   margin-top: 12px;
+// }
 
-#add-photo {
-  margin-top: 12px;
-  float: center;
-}
+// #add-photo {
+//   margin-top: 5px;
+// }
+
+// #user-profile {
+//   margin-top: 5px;
+// }
 
 .center {
   text-align: center;

@@ -14,11 +14,16 @@ feature 'liking a photo' do
     add_photo('Dumpster', 'Industrial bin in blue with 4 multi-directional wheels.')
   end
 
-  xscenario 'a user can like a photo, which increments the photo likes count', js: true do
-    
+  xscenario 'a user can like a photo, which increments the photo likes count' do    
     visit '/photos'
-    click_link 'Like Dumpster'
-    expect(page).to have_content('1 likes')
+    click_link 'Like'
+    expect(page).to have_content('1')
   end
+
+  xscenario 'a user can only like a particular photo once' do
+    visit '/photos'
+    click
+  end
+
 end
 

@@ -12,30 +12,25 @@
     <% @photos.each do |photo| %>
       <div class="well col-md-8 col-md-offset-2">
         <h1><%= link_to photo.name, photo_path(photo) %></h1> 
-        <h4><%= "Posted by #{photo.user.email}" %></h4>
         <%= link_to gravatar_for(photo.user, size: 50), user_path(photo.user) %>
+        <h4><%= "Posted by #{photo.user.email}" %></h4>
         <span class="quiet"><small> <%= time_ago_in_words(photo.created_at) %> ago</small></span>
-        <h3 class='image'><%= image_tag photo.image.url(:original), {:width => "500", :height => "500"} %></h3> 
+        <h3 class='image'> <%= link_to photo_path(photo) do %>
+        <%= image_tag photo.image.url(:original), {:width => "400", :height => "400"} %></h3> 
+        <% end %>
         <p><%= photo.description %></p> 
         <%= link_to like_photo_path(photo, like: true), method: :post do %>
         <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= photo.thumbs_up_total %>
         <% end %> &nbsp&nbsp&nbsp&nbsp
         <%= link_to like_photo_path(photo, like: false), method: :post do %>
         <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= photo.thumbs_down_total %>
-        <% end %>
-        
+        <% end %>  
+        <br>
         <%= link_to "Comment", new_photo_comment_path(photo) %></br>
-        <!-- <h5>Comments for <%= photo.name %></h5> -->
         <% if photo.comments.any? %>
-          <ul>
             <% photo.comments.each do |comment| %>
-              <li>
-                <%= comment.thoughts %> - <h6><%= "Posted by #{comment.user_id}" %></h6>
-              </li>
+                <h6><%= comment.thoughts %> - <%= "Posted by #{comment.user_id}" %></h6>
             <% end %>
-          </ul>
-          </li>
-        </ul>
         <% end %>
       </div>
       <hr/>
