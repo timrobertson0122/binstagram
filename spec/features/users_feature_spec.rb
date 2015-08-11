@@ -17,7 +17,7 @@ feature "User can sign in and out" do
   end
 
   context 'User not signed in and on the home page' do
-    it 'should see a sign-in with Facebook link' do
+    xit 'should see a sign-in with Facebook link' do
       visit('/')
       expect(page).to have_link('Sign in with Facebook')
     end

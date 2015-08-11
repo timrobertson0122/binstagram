@@ -20,7 +20,7 @@ feature 'commenting' do
     click_link 'Comment'
     fill_in 'Thoughts', with: 'so so'
     click_button 'Leave Comment'
-    expect(current_path).to eq '/photos'
+    expect(current_path).to eq '/photos/1'
     expect(page).to have_content('so so')
   end
 end
