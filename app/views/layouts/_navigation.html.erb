@@ -10,10 +10,13 @@
     </div>
       <% else %>
         <div class="nav-item">
-            <%= link_to 'Sign in', new_user_session_path, class: "btn btn-default btn-warning" %>
+          <%= link_to 'Sign in', new_user_session_path, class: "btn btn-default btn-warning" %>
         </div>
         <div class="nav-item">
-            <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-default btn-warning" %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-default btn-warning" %>
+        </div>
+        <div class="nav-item">
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
         </div>
       <% end %>
   </div>
